@@ -1,0 +1,9 @@
+(defun hanoi (N A B C)
+  (cond
+    ((= N 1)(format t "Move from ~A to ~A.~%"  A B))
+    (t (block defaultCase
+      (hanoi (- N 1) A C B)
+      (hanoi 1 A B C)
+      (hanoi (- N 1) C B A)))))
+      
+(hanoi 4 "left" "right" "middle")
